@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 
 export default class PrimeiroProjeto extends Component {
   somar(n1, n2) {
@@ -10,21 +10,18 @@ export default class PrimeiroProjeto extends Component {
     let nome = "Cintia";
 
     return (
-      <View>
-        <Text style={styles.texto}>A soma de 2 + 2 é {this.somar(2, 2)}</Text>
-        <Button
-          title="Aperte"
-          onPress={() => {
-            alert("Me apertou!");
+      <View style={{ marginTop: 50 }}>
+        <Text style={{ fontSize: 25, color: "red", margin: 20 }}>
+          Hello World
+        </Text>
+        <Image
+          source={{
+            uri:
+              "https://saocarlosemrede.com.br/estrela-de-belem-podera-ser-vista-hoje-depois-de-397-anos/",
           }}
-        ></Button>
+          style={{ width: 300, height: 300 }}
+        />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  texto: {
-    fontSize: 30,
-  },
-});
