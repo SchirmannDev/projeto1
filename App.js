@@ -16,8 +16,7 @@ export default class PrimeiroProjeto extends Component {
         </Text>
         <Image
           source={{
-            uri:
-              "https://saocarlosemrede.com.br/estrela-de-belem-podera-ser-vista-hoje-depois-de-397-anos/",
+            uri: "https://github.com/schirmann.png",
           }}
           style={{ width: 300, height: 300 }}
         />
