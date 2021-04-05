@@ -1,32 +1,54 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, Image } from "react-native";
 
-class Imagem extends Component {
+class Janta extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { comida: "" };
+    let comidas = ["Omelete", "Salada", "Banana", "Torta", "Arroz"];
+
+    setInterval(() => {
+      this.setState((previousState) => {
+        let n = Math.floor(Math.random(n) * comidas.length);
+      });
+
+      return { comida: comidas[n] };
+    }, 1000);
+  }
+
   render() {
-    let imagem = {
-      uri: "https://github.com/'+this.props.nome+'.png",
-    };
-
-    return <Image source={imagem} style={{ width: 300, height: 300 }} />;
+    return (
+      <View>
+        <Text
+          style={{
+            fontSize: 23,
+            fontWeight: "bold",
+            textAlign: "center",
+            color: "red",
+          }}
+        >
+          Hoje você vai jantar:
+        </Text>
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 25,
+            fontWeight: "bold",
+            color: "orange",
+          }}
+        >
+          {this.state.comida}
+        </Text>
+      </View>
+    );
   }
 }
 
 export default class Projeto1 extends Component {
   render() {
-    let imagem = {
-      uri: "https://github.com/schirmann.png",
-    };
-
     return (
-      <View style={{ marginTop: 50 }}>
-        <Text style={{ fontSize: 25, color: "red", margin: 50 }}>
-          Hello World
-        </Text>
-        <Imagem nome="schirmann" />
-        <Image
-          source={imagem}
-          style={{ width: 300, height: 300, borderRadius: 150 }}
-        />
+      <View style={{ paddingTop: 50 }}>
+        <Janta />
       </View>
     );
   }
