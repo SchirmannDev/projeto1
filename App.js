@@ -1,41 +1,18 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 
 export default class Projeto1 extends Component {
   render() {
     return (
-      <View style={{ paddingTop: 50 }}>
-        <Text style={styles.azulGrande}>Hello World</Text>
-        <Text style={styles.vermelho}>Olá Mundo</Text>
-        <Text style={styles.amarelo}>React</Text>
-        <Text style={styles.pink}>React-native</Text>
+      <View style={{ marginTop: 20, flex: 1, backgroundColor: "yellow" }}>
+        <View style={{ width: 50, height: 50, backgroundColor: "blue" }}></View>
+        <View
+          style={{ width: 100, height: 100, backgroundColor: "green" }}
+        ></View>
+        <View
+          style={{ width: 200, height: 200, backgroundColor: "red" }}
+        ></View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  azulGrande: {
-    color: "#0000ff",
-    fontSize: 30,
-    textAlign: "center",
-  },
-  vermelho: {
-    color: "#ff0000",
-    fontSize: 25,
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-  amarelo: {
-    color: "#ff0",
-    fontSize: 20,
-    textAlign: "center",
-    fontWeight: "bold",
-  },
-  pink: {
-    color: "#ff00ff",
-    fontSize: 25,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});
