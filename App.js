@@ -17,7 +17,7 @@ export default class Projeto1 extends Component {
 
   mudarTexto(t) {
     let s = this.state;
-    s.texto = "Olá" + t;
+    s.texto = "Olá, " + t + ". Seja bem vinda";
 
     this.setState(s);
   }
