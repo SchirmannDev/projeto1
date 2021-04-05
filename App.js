@@ -1,16 +1,35 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableNativeFeedback,
+} from "react-native";
 
 export default class Projeto1 extends Component {
   constructor(props) {
     super(props);
     this.state = { texto: "" };
+
+    this.mudarTexto = this.mudarTexto.bind(this);
+  }
+
+  mudarTexto(t) {
+    let s = this.state;
+    s.texto = "Olá" + t;
+
+    this.setState(s);
   }
 
   render() {
     return (
       <View style={{ marginTop: 30 }}>
-        <TextInput style={styles.input} placeholder="Qual seu nome?" />
+        <TextInput
+          style={styles.input}
+          placeholder="Qual seu nome?"
+          onChangeText={this.mudarTexto}
+        />
         <Text style={styles.texto}>{this.state.texto}</Text>
       </View>
     );
