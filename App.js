@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TextInput, Image } from "react-native";
 
 export default class Projeto1 extends Component {
   render() {
@@ -7,6 +7,12 @@ export default class Projeto1 extends Component {
       <View style={styles.body}>
         <View>
           <Text style={styles.titulo}>Criador de Memes</Text>
+        </View>
+        <View style={styles.inputArea}>
+          <TextInput style={styles.input} placeholder="Digite seu meme" />
+        </View>
+        <View style={styles.area}>
+          <Image style={styles.guri} source={require("./images/mimimi.jpg")} />
         </View>
       </View>
     );
@@ -22,8 +28,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   titulo: {
-    fontSize: 25,
+    fontSize: 30,
     fontWeight: "bold",
-    color: "blue",
+    color: "#ffffff",
   },
+  input: {
+    borderWidth: 1,
+    borderColor: "#FFFFFF",
+    backgroundColor: "#eeeeee",
+    height: 40,
+    margin: 20,
+    padding: 10,
+  },
+  inputArea: {
+    alignSelf: "stretch",
+  },
+  area: {},
 });
