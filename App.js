@@ -1,36 +1,16 @@
 import React, { Component } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableNativeFeedback,
-} from "react-native";
+import { View, Text, Button, Alert, TextInput, StyleSheet } from "react-native";
 
 export default class Projeto1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { texto: "" };
-
-    this.mudarTexto = this.mudarTexto.bind(this);
-  }
-
-  mudarTexto(t) {
-    let s = this.state;
-    s.texto = "Olá, " + t + ". Seja bem vinda";
-
-    this.setState(s);
+  apertouBotão() {
+    Alert.alert("Você clicou");
   }
 
   render() {
     return (
       <View style={{ marginTop: 30 }}>
-        <TextInput
-          style={styles.input}
-          placeholder="Qual seu nome?"
-          onChangeText={this.mudarTexto}
-        />
-        <Text style={styles.texto}>{this.state.texto}</Text>
+        <TextInput style={styles.input} placeholder="Qual seu nome" />
+        <Button title="Aperte em mim" onPress={this.apertouBotão} />
       </View>
     );
   }
@@ -43,9 +23,5 @@ const styles = StyleSheet.create({
     borderColor: "#00ff",
     margin: 10,
     padding: 10,
-  },
-  texto: {
-    fontSize: 20,
-    textAlign: "center",
   },
 });
