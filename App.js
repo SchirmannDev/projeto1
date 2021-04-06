@@ -11,7 +11,14 @@ export default class Projeto1 extends Component {
 
   apertouBotão() {
     let s = this.state;
-    s.texto = "Olá, " + s.inputTexto;
+
+    if (s.inputTexto == "Cintia") {
+      s.texto = "Vocẽ acertou";
+    } else {
+      s.texto = "Você errou";
+    }
+
+    this.setState(s);
   }
 
   render() {
@@ -19,7 +26,7 @@ export default class Projeto1 extends Component {
       <View style={{ marginTop: 30 }}>
         <TextInput
           style={styles.input}
-          placeholder="Qual seu nome"
+          placeholder="Adivinhe meu nome..."
           onChangeText={(inputTexto) => this.setState({ inputTexto })}
         />
 
