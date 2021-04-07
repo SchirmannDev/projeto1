@@ -4,7 +4,22 @@ import { View, StyleSheet, Text, TextInput, Image } from "react-native";
 export default class Projeto1 extends Component {
   constructor(props) {
     super(props);
-    this.state = { texto1: "", texto2: "" };
+    this.state = { texto1: "alguma coisa", texto2: "mmimimim" };
+
+    this.escrever = this.escrever.bind(this);
+  }
+
+  mudarVogais(texto) {
+    let novoTexto = texto.toLowerCase();
+    return novoTexto;
+  }
+
+  escrever(t) {
+    let s = this.state;
+    s.texto1 = t;
+    s.texto2 = this.mudarVogais(t);
+
+    this.setState(s);
   }
 
   render() {
@@ -14,15 +29,23 @@ export default class Projeto1 extends Component {
           <Text style={styles.titulo}>Criador de Memes</Text>
         </View>
         <View style={styles.inputArea}>
-          <TextInput style={styles.input} placeholder="Digite seu meme" />
+          <TextInput
+            style={styles.input}
+            placeholder="Digite seu meme"
+            onChangeText={this.escrever}
+          />
         </View>
 
         <View style={styles.area}>
-          <Text style={[styles.texto, styles.texto1]}>Texto 1</Text>
+          <Text style={[styles.texto, styles.texto1]}>
+            {this.state.texto1.toUpperCase()}
+          </Text>
 
           <Image style={styles.guri} source={require("./images/mimimi.jpg")} />
 
-          <Text style={[styles.texto, styles.texto2]}>Texto 2</Text>
+          <Text style={[styles.texto, styles.texto2]}>
+            {this.state.texto2.toUpperCase()}
+          </Text>
         </View>
       </View>
     );
