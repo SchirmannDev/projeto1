@@ -11,6 +11,9 @@ export default class Projeto1 extends Component {
 
   mudarVogais(texto) {
     let novoTexto = texto.toLowerCase();
+
+    novoTexto = novoTexto.replace(/(a|e|i|o|u)/g, "i");
+
     return novoTexto;
   }
 
@@ -64,6 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "#ffffff",
+    margin: 10,
   },
   input: {
     borderWidth: 1,
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     height: 300,
     marginTop: -70,
     zIndex: 0,
+    borderRadius: 95,
   },
   texto: {
     fontSize: 25,
